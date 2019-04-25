@@ -4,7 +4,7 @@
             <div class="navbar-header" style="background-color: #263238 !important;">
                 <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
                     <img class="navbar-brand-logo" src="assets/images/logo.png" title="Accionese">
-                    <span class="navbar-brand-text hidden-xs"> Acciones Especiales</span>
+                    <span class="navbar-brand-text hidden-xs"> Emida</span>
                 </div>
                 <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
                         data-toggle="collapse">
@@ -113,56 +113,16 @@
                                 </a>
                             </li>
 
+                            <li class="site-menu-item has-sub">
+                                <a href="#/songs">
+                                    <i class="site-menu-icon  wb-indent-increase" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Songs</span>
+                                    <div class="site-menu-badge">
+                                        <span class="badge badge-success">23</span>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
-                        <ul class="site-menu">
-                            <li class="site-menu-category">Filtros</li>
-                        </ul>
-
-                        <div class="site-menubar-section" v-if="hideMenu">
-
-                            <h5>Mes</h5>
-                            <center>
-                                <multi-select v-model="month"
-                                              searchPlaceholder="Buscar"
-                                              :options="options"
-                                              :btnLabel="btnLabel"
-                                              :selectOptions="months"/>
-                            </center>
-                            <h5>Año</h5>
-                            <center>
-                                <multi-select v-model="year"
-                                              searchPlaceholder="Buscar"
-                                              :options="options"
-                                              :btnLabel="btnLabel"
-                                              :selectOptions="years"/>
-                            </center>
-                            <h5>Ciudad</h5>
-                            <center>
-                                <multi-select v-model="cities"
-                                              search
-                                              searchPlaceholder="Buscar"
-                                              :options="options"
-                                              :btnLabel="btnLabel"
-                                              :selectOptions="allCities"/>
-                            </center>
-                            <h5>Marca</h5>
-                            <center>
-                                <multi-select v-model="brand"
-                                              search
-                                              searchPlaceholder="Buscar"
-                                              :options="options"
-                                              :btnLabel="btnLabel"
-                                              :selectOptions="brands"/>
-                            </center>
-                            <h5>Tipo</h5>
-                            <center>
-                                <multi-select v-model="types"
-                                              searchPlaceholder="Buscar"
-                                              :options="options"
-                                              :btnLabel="btnLabel"
-                                              :selectOptions="alltypes"/>
-                            </center>
-                        </div>
                     </div>
                 </div>
             </div>

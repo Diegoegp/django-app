@@ -27,12 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-'''
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITE_LIST = (
-    'localhost:8080'
-)
-'''
 
 
 # Application definition
@@ -46,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api.music',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +52,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 ]
 
 ROOT_URLCONF = 'api.urls'
