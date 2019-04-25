@@ -1,5 +1,5 @@
 # Music API
-**_django-app_**
+**_django-app REST Template_**
 
 ### 1. Configure Enviroment
 
@@ -52,4 +52,40 @@ $ pip install mysqlclient
 
 ### 3. setting.py
 
+1. Add **'rest_framework',** line
+2. Add **'api.music',** line
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'api.music',
+```
+3. Data base configuration
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_study',
+        'USER': 'root',
+        'PASSWORD': 'pass1234',
+        'HOST': '192.168.0.1',
+        'PORT': '3307',
+    },
+}
+```
 
+### 4. django shell
+```
+$ python manage.py shell
+```
+
+```
+$ from api.music.models import Songs
+$ song1 = Songs(title = 'Rubia Sol Morena Luna', artist = 'Caramelos de Cianuro')
+$ song1.save()
+```
