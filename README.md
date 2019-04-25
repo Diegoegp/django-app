@@ -36,7 +36,7 @@ $ python manage.py createsuperuser --email janez@gmail.com --username janez
 $ python manage.py runserver
 ```
 
-### 2. Data base Conect
+### 2. Data base (install driver)
 
 ```
 $ sudo apt-get install python3-dev

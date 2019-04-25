@@ -16,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="456">
-                <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+              <first_editor relative-caret-position="282">
+                <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               </first_editor>
               <second_editor />
             </state>
@@ -27,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="969">
               <caret line="84" selection-start-line="84" selection-end-line="93" selection-end-column="1" />
             </state>
           </provider>
@@ -132,7 +132,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="969">
           <caret line="84" selection-start-line="84" selection-end-line="93" selection-end-column="1" />
         </state>
       </provider>
@@ -140,8 +140,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="456">
-            <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+          <first_editor relative-caret-position="282">
+            <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           </first_editor>
           <second_editor />
         </state>
