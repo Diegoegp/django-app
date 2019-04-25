@@ -29,7 +29,7 @@ $ python manage.py migrate
 ```
 
 ```
-$ python manage.py createsuperuser --email janez@gmail.com --username janez
+$ python manage.py createsuperuser --email jamserv@gmail.com --username janez
 ```
 
 ```
