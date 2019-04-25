@@ -1,20 +1,55 @@
-# django-app
+# Music API
+**_django-app_**
 
-### Configure Enviroment
+### 1. Configure Enviroment
 
 ```
-1. mkdir janez_django
-2. cd janez_django
-3. python3.6 -m venv env
-4. source env/bin/activate
-5. pip install django
-6. pip install djangorestframework
-7. django-admin startproject api .
-8. cd api
-9. django-admin startapp music
-10. cd ..
-11. python manage.py migrate
-12. python manage.py createsuperuser --email admin@example.com --username admin
-13. python manage.py runserver
+$ mkdir janez_django
+$ cd janez_django
 ```
+
+```
+$ python3.6 -m venv env
+$ source env/bin/activate
+```
+
+```
+$ pip install django
+$ pip install djangorestframework
+```
+
+```
+$ django-admin startproject api .
+$ cd api
+$ django-admin startapp music
+$ cd ..
+```
+```
+$ python manage.py migrate
+```
+
+```
+$ python manage.py createsuperuser --email janez@gmail.com --username janez
+```
+
+```
+$ python manage.py runserver
+```
+
+### 2. Data base Conect
+
+```
+$ sudo apt-get install python3-dev
+```
+
+```
+$ sudo apt-get install python3-dev libmysqlclient-dev
+```
+
+```
+$ pip install mysqlclient
+```
+
+### 3. setting.py
+
 
