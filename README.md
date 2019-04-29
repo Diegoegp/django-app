@@ -90,3 +90,15 @@ $ from api.music.models import Songs
 $ song1 = Songs(title = 'Rubia Sol Morena Luna', artist = 'Caramelos de Cianuro')
 $ song1.save()
 ```
+
+
+### 5. front-end
+###### Pre-Install
+* NodeJS https://nodejs.org/es/download/
+```
+$ npm install --save
+```
+
+```
+$ npm run serve
+```
