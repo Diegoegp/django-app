@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xl-2 col-md-3 info-panel">
           <div class="card card-shadow">
-            <h1 class="text-success">Songs Page</h1>
+            <h1 class="text-success">Section - Morosos</h1>
           </div>
         </div>
 
@@ -21,11 +21,15 @@
           <br>
           <br>
           <template>
-            <el-table 
-                :data="searchTbl"
-                empty-text="No Data">
-              <el-table-column prop="title" label="Title"></el-table-column>
-              <el-table-column prop="artist" label="Artist"></el-table-column>
+            <el-table :data="searchTbl" empty-text="No Data">
+              <el-table-column prop="name" label="name"></el-table-column>
+              <el-table-column prop="last_name" label="last_name"></el-table-column>
+              <el-table-column prop="cellphone" label="cellphone"></el-table-column>
+              <el-table-column prop="no_apto" label="no_apto"></el-table-column>
+              <el-table-column prop="balance" label="balance"></el-table-column>
+              <el-table-column prop="status" label="status"></el-table-column>
+              <el-table-column prop="date" label="date"></el-table-column>
+
               <el-table-column label="Operations">
                 <template slot-scope="scope">
                   <el-button type="warning" @click="handleEdit(scope.$index, scope.row)" circle>
@@ -42,12 +46,39 @@
       </div>
     </div>
 
-    <el-dialog title="Song" :visible.sync="dialogVisible" width="30%">
-      <h3>Title</h3>
-      <el-input placeholder="Please input" v-model="model.title"></el-input>
-      <br>
-      <h3>Artist</h3>
-      <el-input placeholder="Please input" v-model="model.artist"></el-input>
+    <el-dialog title="Moroso" :visible.sync="dialogVisible" width="30%">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Name</h3>
+          <el-input placeholder="Please input" v-model="model.name"></el-input>
+          <br>
+          <h3>Last Name</h3>
+          <el-input placeholder="Please input" v-model="model.last_name"></el-input>
+          <br>
+          <h3>cellphone</h3>
+          <el-input placeholder="Please input" v-model="model.cellphone"></el-input>
+          <br>
+          <h3>no_apto</h3>
+          <el-input placeholder="Please input" v-model="model.no_apto"></el-input>
+          <br>
+          <h3>balance</h3>
+          <el-input placeholder="Please input" v-model="model.balance"></el-input>
+        </div>
+        <div class="col-md-6">
+          <h3>status</h3>
+          <el-input placeholder="Please input" v-model="model.status"></el-input>
+          <br>
+          <h3>date</h3>
+          <el-input placeholder="Please input" v-model="model.date"></el-input>
+          <br>
+          <h3>comment</h3>
+          <el-input placeholder="Please input" v-model="model.comment"></el-input>
+          <br>
+          <h3>month</h3>
+          <el-input placeholder="Please input" v-model="model.month"></el-input>
+        </div>
+      </div>
+
       <span slot="footer" class="dialog-footer">
         <hr>
         <el-button @click="dialogVisible = false">Cancel</el-button>
@@ -66,7 +97,7 @@ const apiURI = "http://127.0.0.1:8000/api/v1/";
 //axios.defaults.baseURL = 'http://127.0.0.1:8000/api/v1/';
 
 export default {
-  name: "songs",
+  name: "morosos",
   mounted() {
     this.getAllSongs();
   },
@@ -77,7 +108,7 @@ export default {
       dialogVisible: false,
       model: {},
       type: "add",
-      search: ''
+      search: ""
     };
   },
   methods: {
@@ -91,7 +122,7 @@ export default {
     update() {
       let self = this;
       axios
-        .put(apiURI + "song/" + self.model.id, {
+        .put(apiURI + "moroso/" + self.model.id, {
           title: self.model.title,
           artist: self.model.artist
         })
@@ -108,7 +139,7 @@ export default {
     add() {
       let self = this;
       axios
-        .post(apiURI + "songs/", self.model)
+        .post(apiURI + "morosos/", self.model)
         .then(function(response) {
           self.isActive = false;
           self.dialogVisible = false;
@@ -124,7 +155,7 @@ export default {
       this.isActive = true;
       let self = this;
       axios
-        .get(apiURI + "song/" + row.id)
+        .get(apiURI + "moroso/" + row.id)
         .then(function(response) {
           var value = response.data;
           self.model = value;
@@ -140,8 +171,9 @@ export default {
       this.isActive = true;
       let self = this;
       axios
-        .delete(apiURI + "song/" + row.id)
-        .then(function(response) {                
+        .delete(apiURI + "moroso/" + row.id)
+        .then(function(response) {
+          console.log(response);
           self.getAllSongs();
         })
         .catch(function(error) {
@@ -153,7 +185,7 @@ export default {
       this.isActive = true;
       let self = this;
       axios
-        .get(apiURI + "songs/")
+        .get(apiURI + "morosos/")
         .then(function(response) {
           var values = response.data;
           self.songs = values;
@@ -169,8 +201,8 @@ export default {
     searchTbl: function() {
       return this.songs.filter(
         content =>
-          content.title.toLowerCase().indexOf(this.search) !== -1 ||
-          content.artist.toLowerCase().indexOf(this.search) !== -1
+          content.name.toLowerCase().indexOf(this.search) !== -1 ||
+          content.last_name.toLowerCase().indexOf(this.search) !== -1
       );
     }
   }

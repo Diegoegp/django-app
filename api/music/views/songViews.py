@@ -1,5 +1,5 @@
 from api.music.models.models import Songs
-from api.music.serializer import SongSerializer
+from api.music.serializers.serializer import SongSerializer
 
 from rest_framework import status
 from rest_framework.decorators import api_view

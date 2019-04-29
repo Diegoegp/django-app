@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Songs from './views/Songs.vue'
+import Morosos from './views/Morosos.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/songs',
       name: 'songs',
         component: Songs
+    },
+    {
+      path: '/morosos',
+      name: 'morosos',
+        component: Morosos
     }
   ]
 })
