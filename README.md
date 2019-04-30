@@ -16,24 +16,17 @@ $ source env/bin/activate
 ```
 $ pip install django
 $ pip install djangorestframework
+$ pip install django-cors-headers
 ```
 
 ```
 $ django-admin startproject api .
 $ cd api
 $ django-admin startapp music
-$ cd ..
-```
-```
-$ python manage.py migrate
 ```
 
 ```
 $ python manage.py createsuperuser --email jamserv@gmail.com --username janez
-```
-
-```
-$ python manage.py runserver
 ```
 
 ### 2. Data base (install driver)
@@ -80,7 +73,27 @@ DATABASES = {
 }
 ```
 
-### 4. django shell
+### 4. deploy
+
+```
+$ python manage.py migrate
+```
+
+```
+$ python manage.py runserver
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 30, 2019 - 22:38:42
+Django version 2.2, using settings 'api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+```
+
+### 5. django shell (optional)
 ```
 $ python manage.py shell
 ```
@@ -92,7 +105,7 @@ $ song1.save()
 ```
 
 
-### 5. front-end
+### 6. front-end
 ###### Pre-Install
 * NodeJS https://nodejs.org/es/download/
 ```
