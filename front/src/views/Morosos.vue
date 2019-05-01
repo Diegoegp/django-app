@@ -65,17 +65,34 @@
           <el-input placeholder="Please input" v-model="model.balance"></el-input>
         </div>
         <div class="col-md-6">
-          <h3>status</h3>
-          <el-input placeholder="Please input" v-model="model.status"></el-input>
-          <br>
           <h3>date</h3>
-          <el-input placeholder="Please input" v-model="model.date"></el-input>
+          <el-date-picker
+            format="yyyy-MM-dd HH:mm"
+            v-model="model.date"
+            type="datetime"
+            placeholder="Select date and time"
+          ></el-date-picker>
           <br>
           <h3>comment</h3>
-          <el-input placeholder="Please input" v-model="model.comment"></el-input>
+          <el-input type="textarea" :rows="6" placeholder="Please input" v-model="model.comment"></el-input>
           <br>
-          <h3>month</h3>
-          <el-input placeholder="Please input" v-model="model.month"></el-input>
+          <h3>month</h3>    
+            <el-select v-model="model.month" placeholder="--">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"></el-option>
+            </el-select>                
+          <br>
+          <h3>status</h3>
+           <el-select v-model="model.status" placeholder="--">
+              <el-option
+                v-for="item in statuslist"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"></el-option>
+            </el-select> 
         </div>
       </div>
 
@@ -108,7 +125,54 @@ export default {
       dialogVisible: false,
       model: {},
       type: "add",
-      search: ""
+      search: "",
+      statuslist: [
+        {
+          value: 'MOROSO',
+          label: 'Moroso'
+        },
+        {
+          value: 'VIGENTE',
+          label: 'Vigente'
+        }
+      ],
+       options: [{
+          value: '1',
+          label: 'Enero'
+        }, {
+          value: '2',
+          label: 'Febrero'
+        }, {
+          value: '3',
+          label: 'Marzo'
+        }, {
+          value: '4',
+          label: 'Abril'
+        }, {
+          value: '5',
+          label: 'Mayo'
+        },{
+          value: '6',
+          label: 'Junio'
+        },{
+          value: '7',
+          label: 'Julio'
+        }, {
+          value: '8',
+          label: 'Agosto'
+        }, {
+          value: '9',
+          label: 'Septiembre'
+        }, {
+          value: '10',
+          label: 'Octubre'
+        }, {
+          value: '11',
+          label: 'Noviembre'
+        },{
+          value: '12',
+          label: 'Diciembre'
+        }]
     };
   },
   methods: {
@@ -122,10 +186,7 @@ export default {
     update() {
       let self = this;
       axios
-        .put(apiURI + "moroso/" + self.model.id, {
-          title: self.model.title,
-          artist: self.model.artist
-        })
+        .put(apiURI + "moroso/" + self.model.id, self.model)
         .then(function(response) {
           self.isActive = false;
           self.dialogVisible = false;

@@ -114,16 +114,6 @@
                             </li>
 
                             <li class="site-menu-item has-sub">
-                                <a href="#/songs">
-                                    <i class="site-menu-icon  wb-indent-increase" aria-hidden="true"></i>
-                                    <span class="site-menu-title">Songs</span>
-                                    <div class="site-menu-badge">
-                                        <span class="badge badge-success">23</span>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="site-menu-item has-sub">
                                 <a href="#/morosos">
                                     <i class="site-menu-icon  wb-indent-increase" aria-hidden="true"></i>
                                     <span class="site-menu-title">Morosos</span>
@@ -143,16 +133,10 @@
 </template>
 <script>
     import axios from 'axios'
-    import {bus} from './main';
-
-    import multiSelect from 'vue-multi-select'
-    import 'vue-multi-select/dist/lib/vue-multi-select.min.css'
+    import {bus} from './main';    
 
     export default {
-        name: 'app',
-        components: {
-            multiSelect
-        },
+        name: 'app',        
         mounted() {
             this.getBrands();
             this.getCities();

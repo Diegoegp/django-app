@@ -96,7 +96,7 @@
         </div>
     </div>
 </template>
-<script>
+<script>            
     import VueApexCharts from 'vue-apexcharts'
     import axios from 'axios'
     import VueElementLoading from 'vue-element-loading'
@@ -106,8 +106,8 @@
     //axios.defaults.baseURL = 'http://localhost:9898/api/dashboard';
 
     export default {
-        components: {
-            'apexcharts': VueApexCharts, VueElementLoading
+        components: {                
+            'apexchart': VueApexCharts, VueElementLoading                    
         },
         name: 'about',
         mounted() {
