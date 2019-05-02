@@ -1,4 +1,4 @@
-# Music API
+# Example API
 **_django-app REST Template_**
 
 ### 1. Configure Enviroment
