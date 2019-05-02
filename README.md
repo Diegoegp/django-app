@@ -4,8 +4,8 @@
 ### 1. Configure Enviroment
 
 ```
-$ mkdir janez_django
-$ cd janez_django
+$ git clone git@github.com:jamserv/django-app.git
+$ cd django-app
 ```
 
 ```
@@ -72,13 +72,14 @@ DATABASES = {
 }
 ```
 
-### 4. deploy
+### 4. migrate
 
 ```
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
+### 5. deploy
 ```
 $ python manage.py runserver
 
@@ -93,7 +94,7 @@ Quit the server with CONTROL-C.
 
 ```
 
-### 5. django shell (optional)
+### 6. django shell (optional)
 ```
 $ python manage.py shell
 ```
@@ -105,7 +106,7 @@ $ song1.save()
 ```
 
 
-### 6. front-end
+### 7. front-end
 ###### Pre-Install
 * NodeJS https://nodejs.org/es/download/
 ```
