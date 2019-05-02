@@ -13,10 +13,12 @@ $ python3.6 -m venv env
 $ source env/bin/activate
 ```
 
+#### 1.2 Install libraries
 ```
 $ pip install django
 $ pip install djangorestframework
 $ pip install django-cors-headers
+$ pip install mysqlclient
 ```
 
 ```
@@ -37,10 +39,6 @@ $ sudo apt-get install python3-dev
 
 ```
 $ sudo apt-get install python3-dev libmysqlclient-dev
-```
-
-```
-$ pip install mysqlclient
 ```
 
 ### 3. setting.py
@@ -109,6 +107,9 @@ $ song1.save()
 ### 6. front-end
 ###### Pre-Install
 * NodeJS https://nodejs.org/es/download/
+```
+$ cd front
+```
 ```
 $ npm install --save
 ```
