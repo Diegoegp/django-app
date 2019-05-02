@@ -12,7 +12,7 @@
           <el-button
             @click="dialogVisible = true; type = 'add'; model = {}"
             type="success"
-            icon="el-icon-check"
+            icon="el-icon-plus"
             circle
           ></el-button>
           <br>
@@ -50,19 +50,19 @@
       <div class="row">
         <div class="col-md-6">
           <h3>Name</h3>
-          <el-input placeholder="Please input" v-model="model.name"></el-input>
+          <el-input maxlength="255" placeholder="Please enter name" v-model="model.name"></el-input>
           <br>
           <h3>Last Name</h3>
-          <el-input placeholder="Please input" v-model="model.last_name"></el-input>
+          <el-input maxlength="255" placeholder="Please enter last name" v-model="model.last_name"></el-input>
           <br>
-          <h3>cellphone</h3>
-          <el-input placeholder="Please input" v-model="model.cellphone"></el-input>
+          <h3>cellphone</h3>          
+          <el-input :min="0" :max="10" maxlength="10" type="number" v-model.number="model.cellphone"></el-input>
           <br>
-          <h3>no_apto</h3>
-          <el-input placeholder="Please input" v-model="model.no_apto"></el-input>
+          <h3>no_apto</h3>          
+          <el-input :min="0" :max="10" maxlength="10" type="number" v-model.number="model.no_apto"></el-input>
           <br>
-          <h3>balance</h3>
-          <el-input placeholder="Please input" v-model="model.balance"></el-input>
+          <h3>balance</h3>          
+          <el-input :min="0" :max="10" maxlength="10" type="number" v-model.number="model.balance"></el-input>                      
         </div>
         <div class="col-md-6">
           <h3>date</h3>
@@ -74,7 +74,7 @@
           ></el-date-picker>
           <br>
           <h3>comment</h3>
-          <el-input type="textarea" :rows="6" placeholder="Please input" v-model="model.comment"></el-input>
+          <el-input type="textarea" :rows="6" maxlength="255" placeholder="Please input" v-model="model.comment"></el-input>
           <br>
           <h3>month</h3>    
             <el-select v-model="model.month" placeholder="--">
@@ -99,7 +99,7 @@
       <span slot="footer" class="dialog-footer">
         <hr>
         <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="success" @click="confirm">Confirm</el-button>
+        <el-button type="success" @click="confirm">Save</el-button>
       </span>
     </el-dialog>
 
@@ -137,40 +137,40 @@ export default {
         }
       ],
        options: [{
-          value: '1',
+          value: 1,
           label: 'Enero'
         }, {
-          value: '2',
+          value: 2,
           label: 'Febrero'
         }, {
-          value: '3',
+          value: 3,
           label: 'Marzo'
         }, {
-          value: '4',
+          value: 4,
           label: 'Abril'
         }, {
-          value: '5',
+          value: 5,
           label: 'Mayo'
         },{
-          value: '6',
+          value: 6,
           label: 'Junio'
         },{
-          value: '7',
+          value: 7,
           label: 'Julio'
         }, {
-          value: '8',
+          value: 8,
           label: 'Agosto'
         }, {
-          value: '9',
+          value: 9,
           label: 'Septiembre'
         }, {
-          value: '10',
+          value: 10,
           label: 'Octubre'
         }, {
-          value: '11',
+          value: 11,
           label: 'Noviembre'
         },{
-          value: '12',
+          value: 12,
           label: 'Diciembre'
         }]
     };
