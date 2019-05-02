@@ -18,9 +18,10 @@ $ source env/bin/activate
 $ pip install django
 $ pip install djangorestframework
 $ pip install django-cors-headers
-$ pip install mysqlclient
+$ sudo apt-get install python3-dev
+$ pip install mysqlclient 
 ```
-
+NOTE: If mysqlclient install is a problem please read https://pypi.org/project/mysqlclient/
 ```
 $ django-admin startproject api .
 $ cd api
