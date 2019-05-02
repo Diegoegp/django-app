@@ -75,6 +75,7 @@ DATABASES = {
 ### 4. deploy
 
 ```
+$ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
